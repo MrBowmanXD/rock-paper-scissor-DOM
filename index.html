@@ -7,9 +7,18 @@
     <body>
     <h1>Rock, Paper Scissors</h1>
     <p>This game requires an open console in order to play</p>
+        
     <button class="rock btn" id="rock" onclick="console.log(singleRound('rock', computerPlay() ))" >Rock</button>
     <button class="paper btn" id="paper" onclick="console.log(singleRound('paper', computerPlay() ))">Paper</button>
     <button class="scissor btn" id="scissor" onclick="console.log(singleRound('scissor', computerPlay() ))" >Scissor</button>
+        
+        <div class="results">Results:
+        <div class="player" >Player: 0</div>
+        <div class="computer">Computer: 0</div>
+        <div class="draw">Draw: 0</div>
+        </div>
+        
+        
         </body>
 <script>
     

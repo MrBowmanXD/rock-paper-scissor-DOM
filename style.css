@@ -10,3 +10,8 @@ body {
 p {
     margin-top: 200px;
 }
+
+.results {
+    margin-top: 50px;
+    font-size: 30px;
+}
