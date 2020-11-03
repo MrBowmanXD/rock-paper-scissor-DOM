@@ -22,6 +22,9 @@
         </body>
 <script>
     
+    
+    
+    
    function computerPlay() {
         let random = Math.floor(Math.random() * 3);
         if (random == 0) {
@@ -35,7 +38,11 @@
         }
     };
     
-   
+// To do: track score during rounds, put those score variables in html using dom, (results in html...)
+    
+   var computerWins = 0;
+    var playerWins = 0;
+    var draws = 0;
     
     
   function singleRound(playerSelection, computerSelection) {
@@ -44,30 +51,52 @@
       
         if (playerSelection == "rock" && computerSelection == "rock") {
             return "It is a Draw! Rock vs Rock";
+            draws++;
+            
         } else if (playerSelection == "rock" && computerSelection == "paper") {
             return "You lose! Paper beats Rock my dude";
+            computerWins++;
+            
         } else if  (playerSelection == "rock" && computerSelection == "scissor") {
             return "You win! Rock beats Scissor easily";
+            playerWins++;
+            
         } else if (playerSelection == "paper" && computerSelection == "rock") {
             return "You win! Well done, Paper beats rock";
+            playerWins++;
+            
         } else if (playerSelection == "paper" && computerSelection == "scissor") {
             return "Haha You lose! Nice try guy but scissor beat paper";
+            computerWins++;
+            
         } else if (playerSelection == "paper" && computerSelection == "paper") {
             return "Well, it is a Draw! Paper will never beat Paper";
+            draws++;
+            
         } else if (playerSelection == "scissor" && computerSelection == "rock") {
             return "You lose! Rock beats scissor";
+            computerWins++;
+            
         } else if (playerSelection == "scissor" && computerSelection == "paper") {
             return "You win! Great job, scissor cut paper";
+            playerWins++;
+            
         } else if (playerSelection == "scissor" && computerSelection == "scissor") {
             return "Too bad, it is a Draw! Scissor can not beat scissor";
+            draws++;
+            
         }
       
       return "Something else";
     };
  
+   /*
+    computerWins = document.querySelector('.computer');
     
-
+    playerWins = document.querySelector('.player');
     
+    draws = document.querySelector('.draw');
+    */
 
     
 
