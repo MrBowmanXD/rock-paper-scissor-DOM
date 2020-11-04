@@ -1,108 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <title>Rock, Paper and Scissors</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-    <h1>Rock, Paper Scissors</h1>
-    <p>This game requires an open console in order to play</p>
-        
-    <button class="rock btn" id="rock" onclick="console.log(singleRound('rock', computerPlay() ))" >Rock</button>
-    <button class="paper btn" id="paper" onclick="console.log(singleRound('paper', computerPlay() ))">Paper</button>
-    <button class="scissor btn" id="scissor" onclick="console.log(singleRound('scissor', computerPlay() ))" >Scissor</button>
-        
-        <div class="results">Results:
-        <div class="player" >Player: 0</div>
-        <div class="computer">Computer: 0</div>
-        <div class="draw">Draw: 0</div>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <title>Rock Paper Scissor Game</title>
+    
+    <meta charset="utf-8">
+    
+</head>
+
+<body>
+    <header>
+        <h1>Rock Paper Scissor</h1>
+    
+    
+    </header>
+    
+    <div class="score-board">
+        <div id="user-label" class="badge">user</div>
+        <div id="computer-label" class="badge">comp</div>
+        <span id="user-score">0</span>:<span id="computer-score">0</span>
+    </div>
+    
+    <div class="result">
+        <p>Paper covers rock. You win!</p>
+    </div>
+    
+    <div class="choices">
+        <div class="choice" id="r">
+            <img src="https://img.icons8.com/color/96/000000/hand-rock.png" alt=""/>
         </div>
-        
-        
-        </body>
-<script>
+        <div class="choice" id="p">
+            <img src="https://img.icons8.com/color/96/000000/hand.png" alt=""/>
+        </div>
+        <div class="choice" id="s">
+            <img src="https://img.icons8.com/color/96/000000/hand-scissors.png" alt=""/>
+        </div>
+    </div>
     
-    
-    
-    
-   function computerPlay() {
-        let random = Math.floor(Math.random() * 3);
-        if (random == 0) {
-            return "rock";
-        } else if (random == 1) {
-            return "paper";
-        } else if (random == 2) {
-            return "scissors";
-        } else {
-            return "Something else";
-        }
-    };
-    
-// To do: track score during rounds, put those score variables in html using dom, (results in html...)
-    
-   var computerWins = 0;
-    var playerWins = 0;
-    var draws = 0;
-    
-    
-  function singleRound(playerSelection, computerSelection) {
-        
-      playerSelection = playerSelection.toLowerCase();
-      
-        if (playerSelection == "rock" && computerSelection == "rock") {
-            return "It is a Draw! Rock vs Rock";
-            draws++;
-            
-        } else if (playerSelection == "rock" && computerSelection == "paper") {
-            return "You lose! Paper beats Rock my dude";
-            computerWins++;
-            
-        } else if  (playerSelection == "rock" && computerSelection == "scissor") {
-            return "You win! Rock beats Scissor easily";
-            playerWins++;
-            
-        } else if (playerSelection == "paper" && computerSelection == "rock") {
-            return "You win! Well done, Paper beats rock";
-            playerWins++;
-            
-        } else if (playerSelection == "paper" && computerSelection == "scissor") {
-            return "Haha You lose! Nice try guy but scissor beat paper";
-            computerWins++;
-            
-        } else if (playerSelection == "paper" && computerSelection == "paper") {
-            return "Well, it is a Draw! Paper will never beat Paper";
-            draws++;
-            
-        } else if (playerSelection == "scissor" && computerSelection == "rock") {
-            return "You lose! Rock beats scissor";
-            computerWins++;
-            
-        } else if (playerSelection == "scissor" && computerSelection == "paper") {
-            return "You win! Great job, scissor cut paper";
-            playerWins++;
-            
-        } else if (playerSelection == "scissor" && computerSelection == "scissor") {
-            return "Too bad, it is a Draw! Scissor can not beat scissor";
-            draws++;
-            
-        }
-      
-      return "Something else";
-    };
- 
-   /*
-    computerWins = document.querySelector('.computer');
-    
-    playerWins = document.querySelector('.player');
-    
-    draws = document.querySelector('.draw');
-    */
+        <p id="action-message">Make your move</p>
+</body>
 
-    
 
-    
-    
-</script>
 
+
+
+<script src="app.js"></script>
 
 </html>
